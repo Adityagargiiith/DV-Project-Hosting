@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html;charset=utf-8"/ >
+		<title>Smoothed D3.js Radar Chart</title>
+
+		<!-- Google fonts -->
+		<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300' rel='stylesheet' type='text/css'>
+		<link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
+
+		<!-- D3.js -->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.6/d3.min.js" charset="utf-8"></script>
+		
+		<style>
+			body {
+				font-family: 'Open Sans', sans-serif;
+				font-size: 11px;
+				font-weight: 300;
+				fill: #242424;
+				text-align: center;
+				text-shadow: 0 1px 0 white, 1px 0 0 red, -1px 0 0 white, 0 -1px 0 white;
+				
+				cursor: default;
+			}
+			
+			.legend {
+				font-family: 'Raleway', sans-serif;
+				fill: #333333;
+			}
+			
+			.tooltip {
+				fill: #333333;
+			}
+			.sidebar {
+            position: absolute;
+            top: 50px; /* Adjust this value to position the element vertically */
+            right: 20px; /* Adjust this value to position the element horizontally */
+            text-align: right;
+		    color: black;
+        }
+
+	
+
+.sidebar-heading {
+    font-size: 18px; /* Adjust font size */
+    margin-bottom: 10px; /* Add spacing between heading and text */
+}
+
+.sidebar-text {
+    font-size: 14px; /* Adjust font size */
+    margin-bottom: 20px; /* Add spacing between paragraphs */
+}
+
+		</style>
+	
+	</head>
+	<body>
+
+		<div class="radarChart"></div>
+		<div class="sidebar">
+			<h2 class="sidebar-heading" style="text-align: center;">Chart Description</h2>
+			<p class="sidebar-text" style="font-size: 15px;">The chart represents the average valuation increase in industry per year</p>
+		</div>
+
+		<script src="radarChart.js"></script>	
+		<script>
+      
+      /* Radar chart design created by Nadieh Bremer - VisualCinnamon.com */
+      
+			////////////////////////////////////////////////////////////// 
+			//////////////////////// Set-Up ////////////////////////////// 
+			////////////////////////////////////////////////////////////// 
+
+			var margin = {top: 100, right: 100, bottom: 100, left: 100},
+				width = Math.min(700, window.innerWidth - 10) - margin.left - margin.right,
+				height = Math.min(width, window.innerHeight - margin.top - margin.bottom - 20);
+					
+			////////////////////////////////////////////////////////////// 
+			////////////////////////// Data ////////////////////////////// 
+			////////////////////////////////////////////////////////////// 
+
+			var data = [
+					  [//iPhone
+						{axis:"Technology",value:769674},
+						{axis:"Consumer Internet",value:1102337},
+						{axis:"eCommerce",value:4032292},
+						{axis:"Healthcare",value:1217076},
+						{axis:"Logistics",value:1570329},
+						{axis:"Food & Beverage",value:340043},
+						{axis:"Finance",value:729336},
+						{axis:"Education",value:766136},			
+						{axis:"'FMCG",value:32500},
+						{axis:"Real Estate",value:312500}
+					  ]
+					];
+			////////////////////////////////////////////////////////////// 
+			//////////////////// Draw the Chart ////////////////////////// 
+			////////////////////////////////////////////////////////////// 
+
+			var color = d3.scale.ordinal()
+				.range(["#EDC951","#CC333F","#00A0B0"]);
+				
+			var radarChartOptions = {
+			  w: width,
+			  h: height,
+			  margin: margin,
+			  maxValue: 0.5,
+			  levels: 5,
+			  roundStrokes: true,
+			  color: color
+			};
+			//Call function to draw the Radar chart
+			RadarChart(".radarChart", data, radarChartOptions);
+		</script>
+	</body>
+</html>

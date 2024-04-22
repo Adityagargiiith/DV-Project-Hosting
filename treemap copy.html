@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+
+<!-- Load d3.js -->
+<script src="https://d3js.org/d3.v4.js"></script>
+
+<!-- Create a div where the graph will take place -->
+<div id="my_dataviz"></div>
+<style>
+    .cell rect {
+        stroke: white;
+    }
+
+    .cell text {
+        font: 10px sans-serif;
+        text-anchor: start;
+        fill: white;
+    }
+
+    .city-header {
+        font: 12px sans-serif;
+        text-anchor: middle;
+        fill: black;
+        font-weight: bold; /* Highlight the city names */
+        text-transform: uppercase; /* Make city names uppercase */
+    }
+
+    .tooltip {
+        position: absolute;
+        padding: 10px;
+        background-color: rgba(0, 0, 0, 0.8);
+        color: white;
+        border-radius: 5px;
+        pointer-events: none;
+        opacity: 0;
+    }
+</style>
+<script>
+
+    // set the dimensions and margins of the graph
+    var margin = {top: 30, right: 10, bottom: 10, left: 10},
+      width = 1000 - margin.left - margin.right,
+      height = 800 - margin.top - margin.bottom;
+    
+    // append the svg object to the body of the page
+    var svg = d3.select("#my_dataviz")
+    .append("svg")
+      .attr("width", width + margin.left + margin.right)
+      .attr("height", height + margin.top + margin.bottom)
+    .append("g")
+      .attr("transform",
+            "translate(" + margin.left + "," + margin.top + ")");
+    
+    // Read CSV data
+    d3.csv("startup_funding3.csv", function(data) {
+    
+      // Convert AmountInUSD to numeric
+      data.forEach(function(d) {
+        d.AmountInUSD = +d.AmountInUSD.replace(/,/g, '');
+      });
+
+      // Filter companies with valuation less than $4,000,000
+      data = data.filter(function(d) {
+        return d.AmountInUSD >= 4000000;
+      });
+    
+      // Nest the data by CityLocation
+      var nestedData = d3.nest()
+        .key(function(d) { return d.CityLocation; })
+        .entries(data);
+    
+      // Set up color scale for cities
+      var color = d3.scaleOrdinal(d3.schemeCategory10);
+
+      // Set up treemap layout
+      var treemap = d3.treemap()
+        .size([width, height])
+        .padding(1);
+    
+      // Compute hierarchy
+      var root = d3.hierarchy({ values: nestedData }, function(d) { return d.values; })
+        .sum(function(d) { return d.AmountInUSD; });
+    
+      // Run the treemap layout
+      treemap(root);
+    
+      // Add rectangles
+      var cells = svg.selectAll(".cell")
+        .data(root.leaves())
+        .enter().append("g")
+          .attr("class", "cell")
+          .attr("transform", function(d) { return "translate(" + d.x0 + "," + d.y0 + ")"; });
+    
+      cells.append("rect")
+        .attr("width", function(d) { return d.x1 - d.x0; })
+        .attr("height", function(d) { return d.y1 - d.y0; })
+        .style("fill", function(d) { return color(d.data.CityLocation); });
+    
+      // Add text labels (startup names)
+      cells.append("text")
+        .attr("x", 3)
+        .attr("y", 12)
+        .text(function(d) { return d.data.StartupName; });
+    
+      // Add city headers
+      svg.selectAll(".city-header")
+        .data(root.children)
+        .enter().append("text")
+          .attr("class", "city-header")
+          .attr("x", function(d) { return (d.x0 + d.x1) / 2; })
+          .attr("y", function(d) { return d.y0 - 6; })
+          .text(function(d) { return d.data.key; });
+
+      // Add tooltip
+      var tooltip = d3.select("#my_dataviz")
+        .append("div")
+        .attr("class", "tooltip")
+        .style("opacity", 0);
+
+      // Add event listeners for hover
+      cells.on("mouseover", handleMouseOver)
+        .on("mouseout", handleMouseOut);
+
+      function handleMouseOver(d) {
+        // Show tooltip with startup name and valuation
+        tooltip.transition()
+          .duration(200)
+          .style("opacity", .9);
+        tooltip.html("<strong>Startup:</strong> " + d.data.StartupName + "<br><strong>Valuation:</strong> $" + d3.format(",")(d.data.AmountInUSD))
+          .style("left", (d3.event.pageX) + "px")
+          .style("top", (d3.event.pageY - 28) + "px");
+      }
+
+      function handleMouseOut(d) {
+        // Hide tooltip
+        tooltip.transition()
+          .duration(500)
+          .style("opacity", 0);
+      }
+    });
+</script>

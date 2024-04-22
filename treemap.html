@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Charts / Chart.js - NiceAdmin Bootstrap Template</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.gstatic.com" rel="preconnect">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="assets/vendor/quill/quill.snow.css" rel="stylesheet">
+  <link href="assets/vendor/quill/quill.bubble.css" rel="stylesheet">
+  <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+  <link href="assets/vendor/simple-datatables/style.css" rel="stylesheet">
+
+
+  <link href="assets/css/style.css" rel="stylesheet">
+
+  <style>
+    .card-title {
+      margin-top: 0; /* Set top margin of .card-title to 0 */
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="header fixed-top d-flex align-items-center">
+
+    <div class="d-flex align-items-center justify-content-between">
+      <a href="index.html" class="logo d-flex align-items-center">
+        <img src="assets/img/logo.png" alt="">
+        <span class="d-none d-lg-block">STARTUP VISUALISATION</span>
+      </a>
+      <i class="bi bi-list toggle-sidebar-btn"></i>
+    </div>
+    
+
+    <nav class="header-nav ms-auto">
+      <ul class="d-flex align-items-center">
+
+      
+        <li class="nav-item dropdown">
+
+         
+
+          <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow notifications">
+
+           
+
+        </li><!-- End Notification Nav -->
+
+        <li class="nav-item dropdown">
+
+          <a class="nav-link nav-icon" href="#" data-bs-toggle="dropdown">
+            <i class="bi bi-chat-left-text"></i>
+            <span class="badge bg-success badge-number">3</span>
+          </a><!-- End Messages Icon -->
+
+          <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow messages">
+
+        </li><!-- End Messages Nav -->
+
+        <li class="nav-item dropdown pe-3">
+
+          </ul><!-- End Profile Dropdown Items -->
+        </li><!-- End Profile Nav -->
+
+      </ul>
+    </nav>
+
+  </header><!-- End Header -->
+
+  <aside id="sidebar" class="sidebar">
+
+    <ul class="sidebar-nav" id="sidebar-nav">
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="index.html">
+          <i class="bi bi-grid"></i>
+          <span>Dashboard</span>
+        </a>
+      </li><!-- End Dashboard Nav -->
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" data-bs-target="#components-nav" data-bs-toggle="collapse" href="#">
+          <i class="bi bi-menu-button-wide"></i><span>Components</span><i class="bi bi-chevron-down ms-auto"></i>
+        </a>
+        <ul id="components-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+          <li>
+            <a href="sunburst.html">
+              <i class="bi bi-circle"></i><span>SunBurst Graph</span>
+            </a>
+          </li>
+          <li>
+            <a href="barchart.html">
+              <i class="bi bi-circle"></i><span>BarChart</span>
+            </a>
+          </li>
+          <li>
+            <a href="radial_bar_chart.html">
+              <i class="bi bi-circle"></i><span>Radial Bar Chart</span>
+            </a>
+          </li>
+          <li>
+            <a href="word_cloud.html">
+              <i class="bi bi-circle"></i><span>WordCloud</span>
+            </a>
+          </li>
+         
+            <a href="treemap.html">
+              <i class="bi bi-circle"></i><span>Treemap</span>
+            </a>
+          </li>
+          <li>
+            <a href="chloropleth_india.html">
+              <i class="bi bi-circle"></i><span>Chloropleth Graph</span>
+            </a>
+          </li>
+          <li>
+            <a href="heatmap.html">
+              <i class="bi bi-circle"></i><span>HeatMap</span>
+            </a>
+          </li>
+          <li>
+            <a href="radar.html">
+              <i class="bi bi-circle"></i><span>Radar Graph</span>
+            </a>
+          </li>
+         
+        </ul>
+      </li><!-- End Components Nav -->
+
+    </ul>
+
+  </aside><!-- End Sidebar-->
+
+  <main id="main" class="main">
+    <section>
+      <!-- <div class="row"> -->
+          <div>
+            <!DOCTYPE html>
+            <html lang="en">
+            <head>
+                <meta charset="UTF-8">
+                <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                <title>Description of Word Cloud Visualization</title>
+            </head>
+            <body>
+                <h1>Description of Treemap Visualization</h1>
+                <p>
+                    The Treemap Visualization illustrates the distribution of companies across cities in India, providing insights into their evaluations and concentration in different urban areas.
+                </p>
+                <ul>
+                    <li><strong>Treemap:</strong> The visualization utilizes a hierarchical layout where cities are represented as rectangles, with the size of each rectangle proportional to the total evaluation of companies located in that city. Larger rectangles indicate higher total evaluations, reflecting a larger number of companies or higher-valued companies.</li>
+                    <li><strong>Data Source:</strong> Data for this visualization is derived from a dataset containing information about companies and their respective cities in India. Each rectangle in the treemap corresponds to a city, with the area of the rectangle determined by the total evaluation of companies located within that city.</li>
+                    <li><strong>Hovering:</strong> Hovering over each rectangle in the treemap provides additional details, such as the name of the company and its evaluation. This interactive feature allows users to explore specific companies within each city and gain insights into their respective evaluations.</li>
+                </ul>
+                <p>
+                    By visualizing company distribution across Indian cities in a treemap format, this visualization facilitates the identification of cities with significant concentrations of high-valued companies, offering valuable insights for analysis and decision-making in the context of India's startup ecosystem.
+                </p>
+            </body>
+            </html>
+            
+              <!-- <div>hello</div> -->
+              <!-- <canvas id="lineChart"></canvas> -->
+                <div id="treemap"></div>
+                <script src="https://d3js.org/d3.v4.js"></script>
+
+<!-- Create a div where the graph will take place -->
+<div id="my_dataviz"></div>
+<style>
+    .cell rect {
+        stroke: white;
+    }
+
+    .cell text {
+        font: 10px sans-serif;
+        text-anchor: start;
+        fill: white;
+    }
+
+    .city-header {
+        font: 12px sans-serif;
+        text-anchor: middle;
+        fill: black;
+        font-weight: bold; /* Highlight the city names */
+        text-transform: uppercase; /* Make city names uppercase */
+    }
+
+    .tooltip {
+        position: absolute;
+        padding: 10px;
+        background-color: rgba(0, 0, 0, 0.8);
+        color: white;
+        border-radius: 5px;
+        pointer-events: none;
+        opacity: 0;
+    }
+</style>
+<script>
+
+    // set the dimensions and margins of the graph
+    var margin = {top: 30, right: 10, bottom: 10, left: 10},
+      width = 1000 - margin.left - margin.right,
+      height = 800 - margin.top - margin.bottom;
+    
+    // append the svg object to the body of the page
+    var svg = d3.select("#my_dataviz")
+    .append("svg")
+      .attr("width", width + margin.left + margin.right)
+      .attr("height", height + margin.top + margin.bottom)
+    .append("g")
+      .attr("transform",
+            "translate(" + margin.left + "," + margin.top + ")");
+    
+    // Read CSV data
+    d3.csv("startup_funding3.csv", function(data) {
+    
+      // Convert AmountInUSD to numeric
+      data.forEach(function(d) {
+        d.AmountInUSD = +d.AmountInUSD.replace(/,/g, '');
+      });
+
+      // Filter companies with valuation less than $4,000,000
+      data = data.filter(function(d) {
+        return d.AmountInUSD >= 4000000;
+      });
+    
+      // Nest the data by CityLocation
+      var nestedData = d3.nest()
+        .key(function(d) { return d.CityLocation; })
+        .entries(data);
+    
+      // Set up color scale for cities
+      var color = d3.scaleOrdinal(d3.schemeCategory10);
+
+      // Set up treemap layout
+      var treemap = d3.treemap()
+        .size([width, height])
+        .padding(1);
+    
+      // Compute hierarchy
+      var root = d3.hierarchy({ values: nestedData }, function(d) { return d.values; })
+        .sum(function(d) { return d.AmountInUSD; });
+    
+      // Run the treemap layout
+      treemap(root);
+    
+      // Add rectangles
+      var cells = svg.selectAll(".cell")
+        .data(root.leaves())
+        .enter().append("g")
+          .attr("class", "cell")
+          .attr("transform", function(d) { return "translate(" + d.x0 + "," + d.y0 + ")"; });
+    
+      cells.append("rect")
+        .attr("width", function(d) { return d.x1 - d.x0; })
+        .attr("height", function(d) { return d.y1 - d.y0; })
+        .style("fill", function(d) { return color(d.data.CityLocation); });
+    
+      // Add text labels (startup names)
+      cells.append("text")
+        .attr("x", 3)
+        .attr("y", 12)
+        .text(function(d) { return d.data.StartupName; });
+    
+      // Add city headers
+      svg.selectAll(".city-header")
+        .data(root.children)
+        .enter().append("text")
+          .attr("class", "city-header")
+          .attr("x", function(d) { return (d.x0 + d.x1) / 2; })
+          .attr("y", function(d) { return d.y0 - 6; })
+          .text(function(d) { return d.data.key; });
+
+      // Add tooltip
+      var tooltip = d3.select("#my_dataviz")
+        .append("div")
+        .attr("class", "tooltip")
+        .style("opacity", 0);
+
+      // Add event listeners for hover
+      cells.on("mouseover", handleMouseOver)
+        .on("mouseout", handleMouseOut);
+
+      function handleMouseOver(d) {
+        // Show tooltip with startup name and valuation
+        tooltip.transition()
+          .duration(200)
+          .style("opacity", .9);
+        tooltip.html("<strong>Startup:</strong> " + d.data.StartupName + "<br><strong>Valuation:</strong> $" + d3.format(",")(d.data.AmountInUSD))
+          .style("left", (d3.event.pageX) + "px")
+          .style("top", (d3.event.pageY - 28) + "px");
+      }
+
+      function handleMouseOut(d) {
+        // Hide tooltip
+        tooltip.transition()
+          .duration(500)
+          .style("opacity", 0);
+      }
+    });
+</script>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main><!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer" class="footer">
+    <div class="copyright">
+     
+    <div class="credits">
+      <!-- All the links in the footer should remain intact. -->
+      <!-- You can delete the links only if you purchased the pro version. -->
+      <!-- Licensing information: https://bootstrapmade.com/license/ -->
+      <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/ -->
+      Designed by Aditya Garg, Kunal Angadi, Aniket Bansal
+    </div>
+  </footer><!-- End Footer -->
+
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/apexcharts/apexcharts.min.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/chart.js/chart.umd.js"></script>
+  <script src="assets/vendor/echarts/echarts.min.js"></script>
+  <script src="assets/vendor/quill/quill.js"></script>
+  <script src="assets/vendor/simple-datatables/simple-datatables.js"></script>
+  <script src="assets/vendor/tinymce/tinymce.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="assets/js/main.js"></script>
+
+</body>
+
+</html>

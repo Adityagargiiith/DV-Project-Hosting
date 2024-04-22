@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Charts / Chart.js - NiceAdmin Bootstrap Template</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.gstatic.com" rel="preconnect">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="assets/vendor/quill/quill.snow.css" rel="stylesheet">
+  <link href="assets/vendor/quill/quill.bubble.css" rel="stylesheet">
+  <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+  <link href="assets/vendor/simple-datatables/style.css" rel="stylesheet">
+
+
+  <link href="assets/css/style.css" rel="stylesheet">
+
+  <style>
+    .card-title {
+      margin-top: 0; /* Set top margin of .card-title to 0 */
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="header fixed-top d-flex align-items-center">
+
+    <div class="d-flex align-items-center justify-content-between">
+      <a href="index.html" class="logo d-flex align-items-center">
+        <img src="assets/img/logo.png" alt="">
+        <span class="d-none d-lg-block">STARTUP VISUALISATION</span>
+      </a>
+      <i class="bi bi-list toggle-sidebar-btn"></i>
+    </div>
+    
+
+    <nav class="header-nav ms-auto">
+      <ul class="d-flex align-items-center">
+
+      
+        <li class="nav-item dropdown">
+
+         
+
+          <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow notifications">
+
+           
+
+        </li><!-- End Notification Nav -->
+
+        <li class="nav-item dropdown">
+
+          <a class="nav-link nav-icon" href="#" data-bs-toggle="dropdown">
+            <i class="bi bi-chat-left-text"></i>
+            <span class="badge bg-success badge-number">3</span>
+          </a><!-- End Messages Icon -->
+
+          <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow messages">
+
+        </li><!-- End Messages Nav -->
+
+        <li class="nav-item dropdown pe-3">
+
+          </ul><!-- End Profile Dropdown Items -->
+        </li><!-- End Profile Nav -->
+
+      </ul>
+    </nav>
+
+  </header><!-- End Header -->
+
+  <aside id="sidebar" class="sidebar">
+
+    <ul class="sidebar-nav" id="sidebar-nav">
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="index.html">
+          <i class="bi bi-grid"></i>
+          <span>Dashboard</span>
+        </a>
+      </li><!-- End Dashboard Nav -->
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" data-bs-target="#components-nav" data-bs-toggle="collapse" href="#">
+          <i class="bi bi-menu-button-wide"></i><span>Components</span><i class="bi bi-chevron-down ms-auto"></i>
+        </a>
+        <ul id="components-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+          <li>
+            <a href="sunburst.html">
+              <i class="bi bi-circle"></i><span>SunBurst Graph</span>
+            </a>
+          </li>
+          <li>
+            <a href="barchart.html">
+              <i class="bi bi-circle"></i><span>BarChart</span>
+            </a>
+          </li>
+          <li>
+            <a href="radial_bar_chart.html">
+              <i class="bi bi-circle"></i><span>Radial Bar Chart</span>
+            </a>
+          </li>
+          <li>
+            <a href="word_cloud.html">
+              <i class="bi bi-circle"></i><span>WordCloud</span>
+            </a>
+          </li>
+         
+            <a href="treemap.html">
+              <i class="bi bi-circle"></i><span>Treemap</span>
+            </a>
+          </li>
+          <li>
+            <a href="chloropleth_india.html">
+              <i class="bi bi-circle"></i><span>Chloropleth Graph</span>
+            </a>
+          </li>
+          <li>
+            <a href="heatmap.html">
+              <i class="bi bi-circle"></i><span>HeatMap</span>
+            </a>
+          </li>
+          <li>
+            <a href="radar.html">
+              <i class="bi bi-circle"></i><span>Radar Graph</span>
+            </a>
+          </li>
+         
+        </ul>
+      </li><!-- End Components Nav -->
+
+    </ul>
+
+  </aside><!-- End Sidebar-->
+
+  <main id="main" class="main">
+    <script src="https://d3js.org/d3.v6.min.js"></script>
+
+    <!-- Styling -->
+    <style>
+      .chart {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Adjust as needed */
+}
+      /* Global styles */
+      
+      /* Header styles */
+      header {
+        background-color:white;
+        color: #fff;
+        padding: 20px;
+        text-align: center;
+      }
+      /* Navbar styles */
+      nav {
+        background-color: white;
+        padding: 10px 0;
+        text-align: center;
+      }
+      nav a {
+        color: #fff;
+        text-decoration: none;
+        margin: 0 20px;
+      }
+      nav a:hover {
+        text-decoration: underline;
+      }
+      .bar {
+        fill: skyblue;
+      }
+      .bar:hover {
+        fill: brown;
+      }
+      .bar.black {
+        fill: black;
+      }
+      .axis {
+        font-size: 12px;
+      }
+      .axis path,
+      .axis line {
+        fill: none;
+        stroke: #000;
+        shape-rendering: crispEdges;
+      }
+      .x-axis path {
+        display: none;
+      }
+      .tooltip {
+        position: absolute;
+        background-color: rgba(0, 0, 0, 0.8);
+        color: white;
+        padding: 8px;
+        border-radius: 4px;
+        pointer-events: none;
+      }
+
+    </style>
+  </head>
+  <body>
+      <!-- Main content -->
+      <!DOCTYPE html>
+      <html lang="en">
+      <head>
+          <meta charset="UTF-8">
+          <meta name="viewport" content="width=device-width, initial-scale=1.0">
+          <title>Description of Bar Chart Visualization</title>
+      </head>
+      <body>
+          <h1>Description of Bar Chart Visualization</h1>
+          <p>
+              This bar chart visualization represents the valuation of startup companies plotted against their respective companies. Users can interact with the chart by selecting different companies from a dropdown menu, and hovering over each bar provides additional information such as the valuation and investors for that particular company.
+          </p>
+          <ul>
+              <li><strong>Valuation:</strong> The height of each bar in the chart represents the valuation (in billion dollars) of the corresponding startup company.</li>
+              <li><strong>Company Selection:</strong> Users can select different companies from the dropdown menu to view their valuations on the chart.</li>
+              <li><strong>Hover Information:</strong> Hovering over each bar displays additional details, including the valuation and investors associated with the selected company.</li>
+          </ul>
+          <p>
+              This interactive bar chart visualization allows users to explore the valuations of various startup companies and gain insights into their financial standing and investor relationships.
+          </p>
+      </body>
+      </html>
+      
+    <label for="industry-select" style="margin-left: 50px;">Select Industry:</label>
+    <select id="industry-select"></select>
+    <label for="color-select" style="margin-left: 50px;">Select Color:</label>
+    <select id="color-select">
+      <option value="skyblue">Sky Blue</option>
+      <option value="black">Black</option>
+    </select>
+    <div id="chart"></div>
+
+    <script>
+      
+      // Load data from the csv
+      d3.csv("startups2.csv").then(function (data) {
+        // Process data by converting 'Valuation ($B)' column to numeric after removing '$' and 'B'
+        data.forEach(function (d) {
+          d["Valuation ($B)"] = parseFloat(
+            d["Valuation ($B)"].replace(/[$B,]/g, "")
+          );
+        });
+
+        // Create dropdown menu for user to select the industry
+        const industrySelect = d3.select("#industry-select");
+        const industries = [...new Set(data.map((d) => d.Industry))];
+        industrySelect
+          .selectAll("option")
+          .data(industries)
+          .enter()
+          .append("option")
+          .attr("value", function (d) {
+            return d;
+          })
+          .text(function (d) {
+            return d;
+          });
+
+        // Initial render the graph for the first industry by default
+        renderChart(data, industries[0]);
+
+        // Update chart whenever user selects a different industry
+        industrySelect.on("change", function () {
+          const selectedIndustry = this.value;
+          renderChart(data, selectedIndustry);
+          selectedColor = document.getElementById("color-select").value;
+          updateBarColor(selectedColor);
+        });
+
+        // Add event listener for color for whenever user selects a different color
+        const colorSelect = document.getElementById("color-select");
+        colorSelect.addEventListener("change", function () {
+          const selectedColor = this.value; //
+          updateBarColor(selectedColor);
+        });
+      });
+
+      // Function to render the bar chart
+      function renderChart(data, industry) {
+        const filteredData = data.filter(function (d) {
+          return d.Industry === industry; // Filter data by industry
+        });
+        selectedColor = document.getElementById("color-select").value;
+        updateBarColor(selectedColor);
+
+        // Sort data by valuation in ascending order
+        filteredData.sort(function (a, b) {
+          return a["Valuation ($B)"] - b["Valuation ($B)"];
+        });
+        // Set up the dimensions and margins
+        const width = 1700;
+        const height = 600;
+        const margin = { top: 50, right: 20, bottom: 150, left: 80 };
+
+        d3.select("#chart").selectAll("svg").remove(); // Clear previous chart
+        // Create SVG element
+        const svg = d3
+          .select("#chart")
+          .append("svg")
+          .attr("width", width + margin.left + margin.right)
+          .attr("height", height + margin.top + margin.bottom)
+          .append("g")
+          .attr("transform", `translate(${margin.left},${margin.top})`);
+
+        // X-axis scale
+        const x = d3.scaleBand().range([0, width]).padding(0.2);
+
+        // Y-axis scale
+        const y = d3.scaleLinear().range([height, 0]);
+        // Set the domain of the scales
+        x.domain(
+          filteredData.map(function (d) {
+            return d.Company;
+          })
+        );
+        y.domain([
+          0,
+          d3.max(filteredData, function (d) {
+            return d["Valuation ($B)"];
+          }),
+        ]);
+        // define the x-axis
+        svg
+          .append("g")
+          .attr("class", "x-axis")
+          .attr("transform", `translate(0,${height})`)
+          .call(d3.axisBottom(x))
+          .selectAll("text")
+          .style("text-anchor", "end")
+          .attr("dx", "-.8em")
+          .attr("dy", ".15em")
+          .attr("transform", "rotate(-65)");
+
+        // define the y-axis
+        svg.append("g").attr("class", "y-axis").call(d3.axisLeft(y));
+
+        // Defining each bar's attributes
+        const bars = svg
+          .selectAll(".bar")//selecting bar
+          .data(filteredData)//filling data
+          .enter()
+          .append("rect")
+          .attr("class", "bar")
+          .attr("x", function (d) {
+            return x(d.Company);
+          })
+          .attr("width", x.bandwidth())
+          .attr("y", function (d) {
+            return y(d["Valuation ($B)"]);
+          })
+          .attr("height", function (d) {
+            return height - y(d["Valuation ($B)"]);
+          });
+
+        // Defining the chart title
+        svg
+          .append("text")
+          .attr("x", width / 2)
+          .attr("y", 0 - margin.top / 2)
+          .attr("text-anchor", "middle")
+          .style("font-size", "16px")
+          .style("font-weight", "bold")
+          .text(`Valuation ($B) of Companies in ${industry}`);
+
+        // X-axis labels
+        svg
+          .append("text")
+          .attr("x", width / 2)
+          .attr("y", height + margin.bottom - 10)
+          .attr("text-anchor", "middle")
+          .style("font-size", "12px")
+          .text("Company");
+
+        // Y-axis labels
+        svg
+          .append("text")
+          .attr("x", 0 - height / 2)
+          .attr("y", 0 - margin.left + 20)
+          .attr("text-anchor", "middle")
+          .attr("transform", "rotate(-90)")
+          .style("font-size", "12px")
+          .text("Valuation ($B)");
+
+        // Creating the tooltip element to display on hover
+        const tooltip = d3
+          .select("body")
+          .append("div")
+          .attr("class", "tooltip")
+          .style("opacity", 0);
+
+        // Tooltip behavior
+        bars
+          .on("mouseover", function (event, d) {
+            tooltip
+              .html(
+                `<p><strong>Investors:</strong> ${d["Select Investors"]}</p><p><strong>Date Joined:</strong> ${d["Date Joined"]}</p><p><strong>Valuation($B):</strong> ${d["Valuation ($B)"]}</p>`
+              )
+              .style("left", event.pageX + "px")
+              .style("top", event.pageY - 28 + "px")
+              .transition()
+              .duration(200)
+              .style("opacity", 0.9);
+          })
+          .on("mouseout", function () {
+            tooltip.transition().duration(500).style("opacity", 0);
+          });
+      }
+      // Function to update bar color
+      function updateBarColor(color) {
+        d3.selectAll(".bar").attr("class", "bar").classed(color, true);
+      }
+    </script>
+    </section>
+
+  </main><!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer" class="footer">
+    <div class="copyright">
+     
+    <div class="credits">
+      <!-- All the links in the footer should remain intact. -->
+      <!-- You can delete the links only if you purchased the pro version. -->
+      <!-- Licensing information: https://bootstrapmade.com/license/ -->
+      <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/ -->
+      Designed by Aditya Garg, Kunal Angadi, Aniket Bansal
+    </div>
+  </footer><!-- End Footer -->
+
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/apexcharts/apexcharts.min.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/chart.js/chart.umd.js"></script>
+  <script src="assets/vendor/echarts/echarts.min.js"></script>
+  <script src="assets/vendor/quill/quill.js"></script>
+  <script src="assets/vendor/simple-datatables/simple-datatables.js"></script>
+  <script src="assets/vendor/tinymce/tinymce.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="assets/js/main.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Charts / Chart.js - NiceAdmin Bootstrap Template</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.gstatic.com" rel="preconnect">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="assets/vendor/quill/quill.snow.css" rel="stylesheet">
+  <link href="assets/vendor/quill/quill.bubble.css" rel="stylesheet">
+  <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+  <link href="assets/vendor/simple-datatables/style.css" rel="stylesheet">
+
+
+  <link href="assets/css/style.css" rel="stylesheet">
+
+  <style>
+    .card-title {
+      margin-top: 0; /* Set top margin of .card-title to 0 */
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="header fixed-top d-flex align-items-center">
+
+    <div class="d-flex align-items-center justify-content-between">
+      <a href="index.html" class="logo d-flex align-items-center">
+        <img src="assets/img/logo.png" alt="">
+        <span class="d-none d-lg-block">STARTUP VISUALISATION</span>
+      </a>
+      <i class="bi bi-list toggle-sidebar-btn"></i>
+    </div>
+    
+
+    <nav class="header-nav ms-auto">
+      <ul class="d-flex align-items-center">
+
+      
+        <li class="nav-item dropdown">
+
+         
+
+          <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow notifications">
+
+           
+
+        </li><!-- End Notification Nav -->
+
+        <li class="nav-item dropdown">
+
+          <a class="nav-link nav-icon" href="#" data-bs-toggle="dropdown">
+            <i class="bi bi-chat-left-text"></i>
+            <span class="badge bg-success badge-number">3</span>
+          </a><!-- End Messages Icon -->
+
+          <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow messages">
+
+        </li><!-- End Messages Nav -->
+
+        <li class="nav-item dropdown pe-3">
+
+          </ul><!-- End Profile Dropdown Items -->
+        </li><!-- End Profile Nav -->
+
+      </ul>
+    </nav>
+
+  </header><!-- End Header -->
+
+  <aside id="sidebar" class="sidebar">
+
+    <ul class="sidebar-nav" id="sidebar-nav">
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="index.html">
+          <i class="bi bi-grid"></i>
+          <span>Dashboard</span>
+        </a>
+      </li><!-- End Dashboard Nav -->
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" data-bs-target="#components-nav" data-bs-toggle="collapse" href="#">
+          <i class="bi bi-menu-button-wide"></i><span>Components</span><i class="bi bi-chevron-down ms-auto"></i>
+        </a>
+        <ul id="components-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+          <li>
+            <a href="sunburst.html">
+              <i class="bi bi-circle"></i><span>SunBurst Graph</span>
+            </a>
+          </li>
+          <li>
+            <a href="barchart.html">
+              <i class="bi bi-circle"></i><span>BarChart</span>
+            </a>
+          </li>
+          <li>
+            <a href="radial_bar_chart.html">
+              <i class="bi bi-circle"></i><span>Radial Bar Chart</span>
+            </a>
+          </li>
+          <li>
+            <a href="word_cloud.html">
+              <i class="bi bi-circle"></i><span>WordCloud</span>
+            </a>
+          </li>
+         
+            <a href="treemap.html">
+              <i class="bi bi-circle"></i><span>Treemap</span>
+            </a>
+          </li>
+          <li>
+            <a href="chloropleth_india.html">
+              <i class="bi bi-circle"></i><span>Chloropleth Graph</span>
+            </a>
+          </li>
+          <li>
+            <a href="heatmap.html">
+              <i class="bi bi-circle"></i><span>HeatMap</span>
+            </a>
+          </li>
+          <li>
+            <a href="radar.html">
+              <i class="bi bi-circle"></i><span>Radar Graph</span>
+            </a>
+          </li>
+         
+        </ul>
+      </li><!-- End Components Nav -->
+    </ul>
+
+  </aside><!-- End Sidebar-->
+
+  <main id="main" class="main">
+    <section>
+      <!-- <div class="row"> -->
+          <div>
+            <!DOCTYPE html>
+            <html lang="en">
+            <head>
+                <meta charset="UTF-8">
+                <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                <h1>Description of Heatmap Visualization</h1>
+                <p>
+                    This heatmap visualization illustrates the distribution of companies across different industries and years, providing insights into the evolution of the startup ecosystem over time.
+                </p>
+                <ul>
+                    <li><strong>Heatmap:</strong> The visualization presents a grid where each cell represents the number of companies in a specific industry joined in a particular year. The color intensity of each cell indicates the magnitude of company count, with darker shades representing higher counts.</li>
+                    <li><strong>Data Source:</strong> Data for this visualization is derived from a CSV file containing information about companies, including their industry and the year they joined. The dataset encompasses companies from various countries and cities worldwide.</li>
+                    <!-- <li><strong>Customization:</strong> The heatmap offers customization options, such as color schemes and annotation display, enabling users to tailor the visualization to their preferences for clarity and aesthetics.</li> -->
+                </ul>
+                <p>
+                    By visualizing the distribution of companies across industries and years in a heatmap format, this visualization facilitates the identification of trends and patterns in the startup landscape, aiding stakeholders in making informed decisions and understanding the dynamics of the startup ecosystem.
+                </p>
+            </body>
+            </html>
+            
+              <!-- <div>hello</div> -->
+              <!-- <canvas id="lineChart"></canvas> -->
+              <img src="heatmap.png" style="display: block; margin: auto; margin-top: 20px;padding-top: 2%;">
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main><!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer" class="footer">
+    <div class="copyright">
+     
+    <div class="credits">
+      <!-- All the links in the footer should remain intact. -->
+      <!-- You can delete the links only if you purchased the pro version. -->
+      <!-- Licensing information: https://bootstrapmade.com/license/ -->
+      <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/ -->
+      Designed by Aditya Garg, Kunal Angadi, Aniket Bansal
+    </div>
+  </footer><!-- End Footer -->
+
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/apexcharts/apexcharts.min.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/chart.js/chart.umd.js"></script>
+  <script src="assets/vendor/echarts/echarts.min.js"></script>
+  <script src="assets/vendor/quill/quill.js"></script>
+  <script src="assets/vendor/simple-datatables/simple-datatables.js"></script>
+  <script src="assets/vendor/tinymce/tinymce.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="assets/js/main.js"></script>
+
+</body>
+
+</html>

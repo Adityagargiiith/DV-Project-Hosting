@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Charts / Chart.js - NiceAdmin Bootstrap Template</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.gstatic.com" rel="preconnect">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="assets/vendor/quill/quill.snow.css" rel="stylesheet">
+  <link href="assets/vendor/quill/quill.bubble.css" rel="stylesheet">
+  <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+  <link href="assets/vendor/simple-datatables/style.css" rel="stylesheet">
+
+
+  <link href="assets/css/style.css" rel="stylesheet">
+
+  <style>
+    .card-title {
+      margin-top: 0; /* Set top margin of .card-title to 0 */
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="header fixed-top d-flex align-items-center">
+
+    <div class="d-flex align-items-center justify-content-between">
+      <a href="index.html" class="logo d-flex align-items-center">
+        <img src="assets/img/logo.png" alt="">
+        <span class="d-none d-lg-block">STARTUP VISUALISATION</span>
+      </a>
+      <i class="bi bi-list toggle-sidebar-btn"></i>
+    </div>
+    
+
+    <nav class="header-nav ms-auto">
+      <ul class="d-flex align-items-center">
+
+      
+        <li class="nav-item dropdown">
+
+         
+
+          <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow notifications">
+
+           
+
+        </li><!-- End Notification Nav -->
+
+        <li class="nav-item dropdown">
+
+          <a class="nav-link nav-icon" href="#" data-bs-toggle="dropdown">
+            <i class="bi bi-chat-left-text"></i>
+            <span class="badge bg-success badge-number">3</span>
+          </a><!-- End Messages Icon -->
+
+          <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow messages">
+
+        </li><!-- End Messages Nav -->
+
+        <li class="nav-item dropdown pe-3">
+
+          </ul><!-- End Profile Dropdown Items -->
+        </li><!-- End Profile Nav -->
+
+      </ul>
+    </nav>
+
+  </header><!-- End Header -->
+
+  <aside id="sidebar" class="sidebar">
+
+    <ul class="sidebar-nav" id="sidebar-nav">
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="index.html">
+          <i class="bi bi-grid"></i>
+          <span>Dashboard</span>
+        </a>
+      </li><!-- End Dashboard Nav -->
+      <li class="nav-item">
+        <a class="nav-link collapsed" data-bs-target="#components-nav" data-bs-toggle="collapse" href="#">
+          <i class="bi bi-menu-button-wide"></i><span>Components</span><i class="bi bi-chevron-down ms-auto"></i>
+        </a>
+        <ul id="components-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+          <li>
+            <a href="sunburst.html">
+              <i class="bi bi-circle"></i><span>SunBurst Graph</span>
+            </a>
+          </li>
+          <li>
+            <a href="barchart.html">
+              <i class="bi bi-circle"></i><span>BarChart</span>
+            </a>
+          </li>
+          <li>
+            <a href="radial_bar_chart.html">
+              <i class="bi bi-circle"></i><span>Radial Bar Chart</span>
+            </a>
+          </li>
+          <li>
+            <a href="word_cloud.html">
+              <i class="bi bi-circle"></i><span>WordCloud</span>
+            </a>
+          </li>
+         
+            <a href="treemap.html">
+              <i class="bi bi-circle"></i><span>Treemap</span>
+            </a>
+          </li>
+          <li>
+            <a href="chloropleth_india.html">
+              <i class="bi bi-circle"></i><span>Chloropleth Graph</span>
+            </a>
+          </li>
+          <li>
+            <a href="heatmap.html">
+              <i class="bi bi-circle"></i><span>HeatMap</span>
+            </a>
+          </li>
+          <li>
+            <a href="radar.html">
+              <i class="bi bi-circle"></i><span>Radar Graph</span>
+            </a>
+          </li>
+         
+        </ul>
+      </li><!-- End Components Nav -->
+
+    </ul>
+
+  </aside><!-- End Sidebar-->
+
+  <main id="main" class="main">
+    <section>
+      <!-- <div class="row"> -->
+          <div>
+            <!DOCTYPE html>
+            <html lang="en">
+            <head>
+                <meta charset="UTF-8">
+                <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                <h1>Description of Radar Chart Visualization</h1>
+                <p>
+                    The Radar Chart Visualization depicts the various industries in India and their average growth per year based on the provided data. This visualization offers insights into the performance of different sectors over time, highlighting their respective growth trends.
+                </p>
+                <ul>
+                    <li><strong>Radar Chart:</strong> The visualization employs a radar chart layout, where each axis represents a specific industry, and the distance from the center indicates the average growth per year in dollars. The chart provides a comprehensive overview of industry performance, allowing for easy comparison between sectors.</li>
+                    <li><strong>Data Source:</strong> The data utilized in this visualization is sourced from industry reports and market analysis, capturing the annual growth rates of various sectors in India. Each axis on the radar chart corresponds to a specific industry, with the value indicating the average growth per year in terms of valuation.</li>
+                    <li><strong>Hovering:</strong> Hovering over each data point on the radar chart displays the average growth per year in dollars. This interactive feature enhances user engagement and facilitates a deeper understanding of the data.</li>
+                </ul>
+                <p>
+                    By visualizing the average growth of industries in India through a radar chart, this visualization aids in identifying sectors with promising growth prospects and those experiencing stagnation. The interactive nature of the chart enables users to explore specific industries and gain insights into their performance dynamics, contributing to informed decision-making and strategic planning.
+                </p>
+            </body>
+            </html>
+            
+              <!-- <div>hello</div> -->
+              <!-- <canvas id="lineChart"></canvas> -->
+              <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/ >
+              <title>Smoothed D3.js Radar Chart</title>
+      
+              <!-- Google fonts -->
+              <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300' rel='stylesheet' type='text/css'>
+              <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
+      
+              <!-- D3.js -->
+              <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.6/d3.min.js" charset="utf-8"></script>
+              
+              
+          
+          </head>
+          <body>
+      
+              <div class="radarChart"></div>
+              
+      
+              <script src="radarChart.js"></script>	
+              <script>
+            
+            /* Radar chart design created by Nadieh Bremer - VisualCinnamon.com */
+            
+                  ////////////////////////////////////////////////////////////// 
+                  //////////////////////// Set-Up ////////////////////////////// 
+                  ////////////////////////////////////////////////////////////// 
+      
+                  var margin = {top: 100, right: 100, bottom: 100, left: 100},
+                      width = Math.min(700, window.innerWidth - 10) - margin.left - margin.right,
+                      height = Math.min(width, window.innerHeight - margin.top - margin.bottom - 20);
+                          
+                  ////////////////////////////////////////////////////////////// 
+                  ////////////////////////// Data ////////////////////////////// 
+                  ////////////////////////////////////////////////////////////// 
+      
+                  var data = [
+                            [//iPhone
+                              {axis:"Technology",value:769674},
+                              {axis:"Consumer Internet",value:1102337},
+                              {axis:"eCommerce",value:4032292},
+                              {axis:"Healthcare",value:1217076},
+                              {axis:"Logistics",value:1570329},
+                              {axis:"Food & Beverage",value:340043},
+                              {axis:"Finance",value:729336},
+                              {axis:"Education",value:766136},			
+                              {axis:"'FMCG",value:32500},
+                              {axis:"Real Estate",value:312500}
+                            ]
+                          ];
+                  ////////////////////////////////////////////////////////////// 
+                  //////////////////// Draw the Chart ////////////////////////// 
+                  ////////////////////////////////////////////////////////////// 
+      
+                  var color = d3.scale.ordinal()
+                      .range(["#EDC951","#CC333F","#00A0B0"]);
+                      
+                  var radarChartOptions = {
+                    w: width,
+                    h: height,
+                    margin: margin,
+                    maxValue: 0.5,
+                    levels: 5,
+                    roundStrokes: true,
+                    color: color
+                  };
+                  //Call function to draw the Radar chart
+                  RadarChart(".radarChart", data, radarChartOptions);
+              </script>
+          </body>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main><!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer" class="footer">
+    <div class="copyright">
+     
+    <div class="credits">
+      <!-- All the links in the footer should remain intact. -->
+      <!-- You can delete the links only if you purchased the pro version. -->
+      <!-- Licensing information: https://bootstrapmade.com/license/ -->
+      <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/ -->
+      Designed by Aditya Garg, Kunal Angadi, Aniket Bansal
+    </div>
+  </footer><!-- End Footer -->
+
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/apexcharts/apexcharts.min.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/chart.js/chart.umd.js"></script>
+  <script src="assets/vendor/echarts/echarts.min.js"></script>
+  <script src="assets/vendor/quill/quill.js"></script>
+  <script src="assets/vendor/simple-datatables/simple-datatables.js"></script>
+  <script src="assets/vendor/tinymce/tinymce.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="assets/js/main.js"></script>
+
+</body>
+
+</html>

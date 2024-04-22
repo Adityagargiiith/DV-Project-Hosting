@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Charts / Chart.js - NiceAdmin Bootstrap Template</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.gstatic.com" rel="preconnect">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="assets/vendor/quill/quill.snow.css" rel="stylesheet">
+  <link href="assets/vendor/quill/quill.bubble.css" rel="stylesheet">
+  <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+  <link href="assets/vendor/simple-datatables/style.css" rel="stylesheet">
+
+
+  <link href="assets/css/style.css" rel="stylesheet">
+
+  <style>
+    .card-title {
+      margin-top: 0; /* Set top margin of .card-title to 0 */
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="header fixed-top d-flex align-items-center">
+
+    <div class="d-flex align-items-center justify-content-between">
+      <a href="index.html" class="logo d-flex align-items-center">
+        <img src="assets/img/logo.png" alt="">
+        <span class="d-none d-lg-block">STARTUP VISUALISATION</span>
+      </a>
+      <i class="bi bi-list toggle-sidebar-btn"></i>
+    </div>
+    
+
+    <nav class="header-nav ms-auto">
+      <ul class="d-flex align-items-center">
+
+      
+        <li class="nav-item dropdown">
+
+         
+
+          <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow notifications">
+
+           
+
+        </li><!-- End Notification Nav -->
+
+        <li class="nav-item dropdown">
+
+          <a class="nav-link nav-icon" href="#" data-bs-toggle="dropdown">
+            <i class="bi bi-chat-left-text"></i>
+            <span class="badge bg-success badge-number">3</span>
+          </a><!-- End Messages Icon -->
+
+          <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow messages">
+
+        </li><!-- End Messages Nav -->
+
+        <li class="nav-item dropdown pe-3">
+
+          </ul><!-- End Profile Dropdown Items -->
+        </li><!-- End Profile Nav -->
+
+      </ul>
+    </nav>
+
+  </header><!-- End Header -->
+
+  <aside id="sidebar" class="sidebar">
+
+    <ul class="sidebar-nav" id="sidebar-nav">
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="index.html">
+          <i class="bi bi-grid"></i>
+          <span>Dashboard</span>
+        </a>
+      </li><!-- End Dashboard Nav -->
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" data-bs-target="#components-nav" data-bs-toggle="collapse" href="#">
+          <i class="bi bi-menu-button-wide"></i><span>Components</span><i class="bi bi-chevron-down ms-auto"></i>
+        </a>
+        <ul id="components-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+          <li>
+            <a href="sunburst.html">
+              <i class="bi bi-circle"></i><span>SunBurst Graph</span>
+            </a>
+          </li>
+          <li>
+            <a href="barchart.html">
+              <i class="bi bi-circle"></i><span>BarChart</span>
+            </a>
+          </li>
+          <li>
+            <a href="radial_bar_chart.html">
+              <i class="bi bi-circle"></i><span>Radial Bar Chart</span>
+            </a>
+          </li>
+          <li>
+            <a href="word_cloud.html">
+              <i class="bi bi-circle"></i><span>WordCloud</span>
+            </a>
+          </li>
+         
+            <a href="treemap.html">
+              <i class="bi bi-circle"></i><span>Treemap</span>
+            </a>
+          </li>
+          <li>
+            <a href="chloropleth_india.html">
+              <i class="bi bi-circle"></i><span>Chloropleth Graph</span>
+            </a>
+          </li>
+          <li>
+            <a href="heatmap.html">
+              <i class="bi bi-circle"></i><span>HeatMap</span>
+            </a>
+          </li>
+          <li>
+            <a href="radar.html">
+              <i class="bi bi-circle"></i><span>Radar Graph</span>
+            </a>
+          </li>
+         
+        </ul>
+      </li><!-- End Components Nav -->
+    </ul>
+
+  </aside><!-- End Sidebar-->
+
+  <main id="main" class="main">
+    <section>
+      <!-- <div class="row"> -->
+          <div>
+            <!DOCTYPE html>
+            <html lang="en">
+            <head>
+                <meta charset="UTF-8">
+                <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                <title>Description of Word Cloud Visualization</title>
+            </head>
+            <body>
+                <h1>Description of Chloropleth Visualization</h1>
+                <p>
+                    This chloropleth visualization depicts the distribution of companies across geographic regions, providing insights into their concentration in different areas.
+                </p>
+                <ul>
+                    <li><strong>Chloropleth Map:</strong> The visualization uses a map where regions are shaded based on the number of companies they contain. Darker shades indicate a higher concentration of companies, while lighter shades represent fewer companies.</li>
+                    <li><strong>Data Source:</strong> Data for this visualization is sourced from a dataset,  containing information about companies and their geographic locations. Each region's shading is determined by the number of companies located within it.</li>
+                    <li><strong>Hovering:</strong> Hovering over each region of the map reveals additional information, such as the name of the region and the count of companies it contains.</li>
+                </ul>
+                <p>
+                    By visualizing company distribution in this manner, the chloropleth visualization helps viewers identify regions with significant concentrations of companies, offering valuable insights for analysis and decision-making.
+                </p>
+            </body>
+            </html>
+            
+              <!-- <div>hello</div> -->
+              <!-- <canvas id="lineChart"></canvas> -->
+              <div class="chloropleth-india"></div>
+              <script src="https://d3js.org/d3.v7.min.js"></script>
+              <style>
+              #container {
+                  display: flex;
+                  justify-content: center;
+                  align-items: center;
+                  width: 100%;
+              }
+              .tooltip {
+                position: absolute;
+                text-align: center;
+                padding: 8px;
+                font: 12px sans-serif;
+                background: #fff;
+                border: 1px solid #ccc;
+                border-radius: 5px;
+                pointer-events: none;
+              }
+              </style>
+          </head>
+          <body>
+              <div id="container">
+              <svg id="map"></svg>
+              <svg id="map2"></svg>
+              </div>
+              <script>
+                  // Load the GeoJSON data
+                  d3.json("https://enjalot.github.io/wwsd/data/world/world-110m.geojson").then(function(geojson) {
+                      
+                      // Parse the CSV data
+                      d3.csv("startups_chloropeth_world.csv").then(function(data) {
+                          
+                          // Extract city names and count occurrences
+                          var cityCounts = {}; // Initialize an empty object to store city counts
+          
+                          data.forEach(function(d) {
+                              var location = d.Country
+          
+                              if (location in cityCounts) {
+                                  // If the city already exists in the cityCounts object, increment its count
+                                  cityCounts[location]++;
+                              } else {
+                                  // If the city is encountered for the first time, initialize its count to 1
+                                  cityCounts[location] = 1;
+                              }
+                          });
+                          console.log(cityCounts)
+          
+                          // Set up color scale
+                          var maxCount = d3.max(Object.values(cityCounts));
+                          var colorScale = d3.scaleSequential(d3.interpolateBlues).domain([0, maxCount]);
+          
+                          // Draw the map
+                          var width = 800;
+                          var height = 600;
+                          var svg = d3.select("#map")
+                                      .attr("width", width)
+                                      .attr("height", height);
+          
+                          var projection = d3.geoMercator().fitSize([width, height], geojson);
+                          var path = d3.geoPath().projection(projection);
+          
+                          // Create a div element for the tooltip
+                          var tooltip = d3.select("body")
+                                          .append("div")
+                                          .attr("class", "tooltip")
+                                          .style("opacity", 0);
+          
+                          svg.selectAll("path")
+                              .data(geojson.features)
+                              .enter().append("path")
+                              .attr("d", path)
+                              .attr("fill", function(d) {
+                                  var cityName = d.properties["name"];
+                                  
+                                  return cityCounts[cityName] ? colorScale(cityCounts[cityName]) : "#ccc"; // Fallback color
+                              })
+                              .attr("stroke", "#000")
+                              .attr("stroke-width", 0.5)
+                              .on("mouseover", function(event, d) {
+                                  // Get the state name and area
+                                  var stateName = d.properties["name"];
+                                  var num_startup = cityCounts[stateName] || 0;
+          
+                                  // Update the tooltip content
+                                  tooltip.html(`<strong>${stateName}</strong><br>Nmber of startups: ${num_startup}`)
+                                         .style("left", (event.pageX + 10) + "px")
+                                         .style("top", (event.pageY - 28) + "px")
+                                         .transition()
+                                         .duration(200)
+                                         .style("opacity", 0.9);
+                              })
+                              .on("mouseout", function() {
+                                  // Hide the tooltip
+                                  tooltip.transition()
+                                         .duration(500)
+                                         .style("opacity", 0);
+                              });
+          
+                          // Legend
+                          var legend = svg.append("g")
+                                          .attr("class", "legend")
+                                          .attr("transform", "translate(20,20)");
+          
+                          var legendScale = d3.scaleLinear().domain([0, maxCount]).range([0, 200]);
+                          var legendAxis = d3.axisBottom(legendScale).ticks(5).tickSize(13).tickPadding(10); // Add some padding to shift the numbers below
+          
+                          legend.append("g").call(legendAxis);
+          
+                          // Adding gradient legend
+                          var defs = svg.append("defs");
+                          var gradient = defs.append("linearGradient")
+                                             .attr("id", "gradient")
+                                             .attr("x1", "0%")
+                                             .attr("x2", "100%")
+                                             .attr("y1", "0%")
+                                             .attr("y2", "0%");
+          
+                          gradient.append("stop")
+                                  .attr("offset", "0%")
+                                  .attr("stop-color", colorScale(0));
+          
+                          gradient.append("stop")
+                                  .attr("offset", "100%")
+                                  .attr("stop-color", colorScale(maxCount));
+          
+                          legend.append("rect")
+                                .attr("width", 200)
+                                .attr("height", 20)
+                                .style("fill", "url(#gradient)");
+          
+                          legend.append("text")
+                              .attr("x", 0)
+                              .attr("y", 40)
+                              .attr("text-anchor", "start")
+                              .attr("font-size", "10px")
+                              .text("Number of Companies");
+          
+                      }).catch(function(error) {
+                          console.log("Error loading CSV file: ", error);
+                      });
+          
+                  }).catch(function(error) {
+                      console.log("Error loading GeoJSON file: ", error);
+                  });
+
+                  d3.json("https://raw.githubusercontent.com/geohacker/india/master/state/india_telengana.geojson").then(function(geojson) {
+            
+            // Parse the CSV data
+            d3.csv("Indian_Startups.csv").then(function(data) {
+                
+                // Extract city names and count occurrences
+                var cityCounts = {}; // Initialize an empty object to store city counts
+
+                data.forEach(function(d) {
+                    var location = d.Location.split('/')[0].trim(); // Get the first city before "/"
+
+                    if (location in cityCounts) {
+                        // If the city already exists in the cityCounts object, increment its count
+                        cityCounts[location]++;
+                    } else {
+                        // If the city is encountered for the first time, initialize its count to 1
+                        cityCounts[location] = 1;
+                    }
+                });
+
+                // Set up color scale
+                var maxCount = d3.max(Object.values(cityCounts));
+                var colorScale = d3.scaleSequential(d3.interpolateBlues).domain([0, maxCount]);
+
+                // Draw the map
+                var width = 800;
+                var height = 600;
+                var svg = d3.select("#map2")
+                            .attr("width", width)
+                            .attr("height", height);
+
+                var projection = d3.geoMercator().fitSize([width, height], geojson);
+                var path = d3.geoPath().projection(projection);
+
+                // Create a div element for the tooltip
+                var tooltip = d3.select("body")
+                                .append("div")
+                                .attr("class", "tooltip")
+                                .style("opacity", 0);
+
+                svg.selectAll("path")
+                    .data(geojson.features)
+                    .enter().append("path")
+                    .attr("d", path)
+                    .attr("fill", function(d) {
+                        var cityName = d.properties["NAME_1"];
+                        
+                        return cityCounts[cityName] ? colorScale(cityCounts[cityName]) : "#ccc"; // Fallback color
+                    })
+                    .attr("stroke", "#000")
+                    .attr("stroke-width", 0.5)
+                    .on("mouseover", function(event, d) {
+                        // Get the state name and area
+                        var stateName = d.properties["NAME_1"];
+                        var num_startup = cityCounts[stateName] || 0;
+
+                        // Update the tooltip content
+                        tooltip.html(`<strong>${stateName}</strong><br>Nmber of startups: ${num_startup}`)
+                               .style("left", (event.pageX + 10) + "px")
+                               .style("top", (event.pageY - 28) + "px")
+                               .transition()
+                               .duration(200)
+                               .style("opacity", 0.9);
+                    })
+                    .on("mouseout", function() {
+                        // Hide the tooltip
+                        tooltip.transition()
+                               .duration(500)
+                               .style("opacity", 0);
+                    });
+
+                // Legend
+                var legend = svg.append("g")
+                                .attr("class", "legend")
+                                .attr("transform", "translate(20,20)");
+
+                var legendScale = d3.scaleLinear().domain([0, maxCount]).range([0, 200]);
+                var legendAxis = d3.axisBottom(legendScale).ticks(5).tickSize(13).tickPadding(10); // Add some padding to shift the numbers below
+
+                legend.append("g").call(legendAxis);
+
+                // Adding gradient legend
+                var defs = svg.append("defs");
+                var gradient = defs.append("linearGradient")
+                                   .attr("id", "gradient")
+                                   .attr("x1", "0%")
+                                   .attr("x2", "100%")
+                                   .attr("y1", "0%")
+                                   .attr("y2", "0%");
+
+                gradient.append("stop")
+                        .attr("offset", "0%")
+                        .attr("stop-color", colorScale(0));
+
+                gradient.append("stop")
+                        .attr("offset", "100%")
+                        .attr("stop-color", colorScale(maxCount));
+
+                legend.append("rect")
+                      .attr("width", 200)
+                      .attr("height", 20)
+                      .style("fill", "url(#gradient)");
+
+                legend.append("text")
+                    .attr("x", 0)
+                    .attr("y", 40)
+                    .attr("text-anchor", "start")
+                    .attr("font-size", "10px")
+                    .text("Number of Companies");
+
+            }).catch(function(error) {
+                console.log("Error loading CSV file: ", error);
+            });
+
+        }).catch(function(error) {
+            console.log("Error loading GeoJSON file: ", error);
+        });
+          
+          
+          
+                
+              </script>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main><!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer" class="footer">
+    <div class="copyright">
+     
+    <div class="credits">
+      <!-- All the links in the footer should remain intact. -->
+      <!-- You can delete the links only if you purchased the pro version. -->
+      <!-- Licensing information: https://bootstrapmade.com/license/ -->
+      <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/ -->
+      Designed by Aditya Garg, Kunal Angadi, Aniket Bansal
+    </div>
+  </footer><!-- End Footer -->
+
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/apexcharts/apexcharts.min.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/chart.js/chart.umd.js"></script>
+  <script src="assets/vendor/echarts/echarts.min.js"></script>
+  <script src="assets/vendor/quill/quill.js"></script>
+  <script src="assets/vendor/simple-datatables/simple-datatables.js"></script>
+  <script src="assets/vendor/tinymce/tinymce.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="assets/js/main.js"></script>
+
+</body>
+
+</html>
